@@ -58,6 +58,18 @@ body {
 
 }
 
+/* begin cool */
+
+.cool {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(./cool.jpg) no-repeat center/cover;
+
+}
+
+.cool .weather {
+    background: url(./cool.jpg) no-repeat center/cover;
+
+}
+
 
 
 

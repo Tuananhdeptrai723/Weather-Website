@@ -31,19 +31,23 @@ async function changeWeatherUI() {
         visibility.innerText = data.visibility + "m";
         wind.innerText = data.wind.speed + "m/s";
         sun.innerText = data.main.humidity + "%";
-        let tempo = value.innerText
-        tempo = Math.ceil(data.main.temp - 273.15);
+
+        // var tempurater = value.innerText
+        value.innerText = Math.ceil(data.main.temp - 273.15);
+
 
 
         shortDesc.innerText = data.weather[0].main ? data.weather[0].main : "No cloud";
         time.innerText = new Date().toLocaleString("vi");
 
         body.setAttribute('class', 'cold');
-        if (tempo < 20) {
+        if (value.innerText < 20) {
             body.setAttribute('class', 'cold');
-        } else if (tempo > 20 && tempo < 25) {
+        } else if (value.innerText > 20 && value.innerText < 25) {
             body.setAttribute('class', 'warm');
-        } else if (tempo > 25) {
+        } else if (value.innerText > 25 && value.innerText < 30) {
+            body.setAttribute('class', 'cool');
+        } else if (value.innerText > 30) {
             body.setAttribute('class', 'hot');
         }
     } else {
