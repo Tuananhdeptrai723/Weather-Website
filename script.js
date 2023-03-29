@@ -8,6 +8,8 @@ var wind = document.querySelector(".wind span");
 var sun = document.querySelector(".sun span");
 var time = document.querySelector(".time");
 var content = document.querySelector(".content");
+var body = document.querySelector("body");
+
 
 
 
@@ -29,9 +31,21 @@ async function changeWeatherUI() {
         visibility.innerText = data.visibility + "m";
         wind.innerText = data.wind.speed + "m/s";
         sun.innerText = data.main.humidity + "%";
-        value.innerText = Math.ceil(data.main.temp - 273.15)
+        let tempo = value.innerText
+        tempo = Math.ceil(data.main.temp - 273.15);
+
+
         shortDesc.innerText = data.weather[0].main ? data.weather[0].main : "No cloud";
-        time.innerText = new Date().toLocaleString("vi")
+        time.innerText = new Date().toLocaleString("vi");
+
+        body.setAttribute('class', 'cold');
+        if (tempo < 20) {
+            body.setAttribute('class', 'cold');
+        } else if (tempo > 20 && tempo < 25) {
+            body.setAttribute('class', 'warm');
+        } else if (tempo > 25) {
+            body.setAttribute('class', 'hot');
+        }
     } else {
         content.classList.add("hide");
     }

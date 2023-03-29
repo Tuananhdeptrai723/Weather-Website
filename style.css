@@ -12,6 +12,7 @@ body {
     align-items: center;
 
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(./cold.jpg) no-repeat center/cover;
+    transition: 0.3s;
 }
 
 .weather {
@@ -21,6 +22,47 @@ body {
     background-color: yellowgreen;
     background: url(./cold.jpg) no-repeat center/cover;
 }
+
+/* begin hot img */
+.hot {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(./hot.jpg) no-repeat center/cover;
+
+}
+
+.hot .weather {
+    background: url(./hot.jpg) no-repeat center/cover;
+
+}
+
+
+/* begin cold img */
+.cold {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(./cold.jpg) no-repeat center/cover;
+
+}
+
+.cold .weather {
+    background: url(./cold.jpg) no-repeat center/cover;
+
+}
+
+/* begin warm */
+
+.warm {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(./warm.jpg) no-repeat center/cover;
+
+}
+
+.warm .weather {
+    background: url(./warm.jpg) no-repeat center/cover;
+
+}
+
+
+
+
+
+
 
 .search {
     width: 100%;
