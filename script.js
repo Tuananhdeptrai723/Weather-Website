@@ -13,11 +13,11 @@ var content = document.querySelector(".content");
 
 
 async function changeWeatherUI() {
-    let vitri = search.input;
-    let trimViTri = vitri.trim();
+    let vitri = search.value.trim();
+
     // d78fd1588e1b7c0c2813576ba183a667
 
-    let apiURl = `https://api.openweathermap.org/data/2.5/weather?q=${trimViTri}&appid=d78fd1588e1b7c0c2813576ba183a667`
+    let apiURl = `https://api.openweathermap.org/data/2.5/weather?q=${vitri}&appid=d78fd1588e1b7c0c2813576ba183a667`
 
     var data = await fetch(apiURl).then(res => res.json())
 
@@ -42,10 +42,7 @@ async function changeWeatherUI() {
 
 search.addEventListener('keypress', function (e) {
     if (e.code === 'Enter') {
-        changeWeatherUI("da lat");
+        changeWeatherUI();
     }
-
-    console.log(e);
-
 });
 
